@@ -103,7 +103,7 @@ void TrafficLight::cycleThroughPhases()
       time_2 = std::chrono::system_clock::now();
       
       // Toggle lights if time duration is greater than above defined cycle duration
-      if ((std::chrono::duration_cast<std::chrono::seconds>(time_1 - time_2).count()) >= cycleDur) {
+      if ((std::chrono::duration_cast<std::chrono::seconds>(time_2 - time_1).count()) >= cycleDur) {
         if (_currentPhase == red) {
           _currentPhase = green;}
           else {
